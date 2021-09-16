@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/916ffc09f1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    
+    <header class="header" id="header">
+        <img class="header__logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1280px-International_Pok%C3%A9mon_logo.svg.png" alt="pokemon-logo">
+        <img class="header__image" src="https://i.ibb.co/hYK75Lj/memory-game-logo.png" alt="">
+        <h1 class="header__title">Memory Game</h1>
+    </header>
+    
+    <main class="main">
+        <section class="main__attempts">
+            <h2 class="attempts__title">Attempts Number:</h2>
+            <p class="attempts__paragraph" id="attempts-paragraph"></p>
+        </section>
+        <section class="main__timer">
+            <h2 class="timer__title">Time:</h2>
+            <p class="timer__numbers" id="timer-numbers">00:00:00</p>
+        </section>
+        <div class="main__game-board" id="main-game-board">
+            <span class="game-board__item"></span>
+            <span class="game-board__item"></span>
+            <span class="game-board__item"></span>
+            <span class="game-board__item"></span>
+            <span class="game-board__item"></span>
+            <span class="game-board__item"></span>
+            <span class="game-board__item"></span>
+            <span class="game-board__item"></span>
+            <span class="game-board__item"></span>
+            <span class="game-board__item"></span>
+            <span class="game-board__item"></span>
+            <span class="game-board__item"></span>
+        </div>
+    </main>
+
+    <div class="loading-screen" id="loading-screen" >
+
+        <div class="loading-screen__left" id="loading-screen-left"></div>
+        <div class="loading-screen__right" id="loading-screen-right"></div>
+        <img class="loading-screen__logo" id="loading-screen-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1280px-International_Pok%C3%A9mon_logo.svg.png" alt="pokemon-logo">
+        <div class="loading-screen__spinner" id="loading-screen-spinner"></div>
+    </div>
+
+    <div class="result-screen" id="result-screen">
+        <article class="result-screen__article">
+            <h2>Congratulations You Won!</h2>
+            <p >You did it in <span id="a-attempts"> </span> attempts!</p>
+            <p >Your Time: <span id="a-time"></span> </p>
+            <button id="button-congratulations">Play Again <i class="fas fa-redo-alt"></i> </button>
+        </article>
+    </div>
+
+    
+
+
+    <!-- <script src="./index.js"></script> -->
+    <script src="./index1.js"></script>
+</body>
+</html>

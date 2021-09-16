@@ -1,0 +1,359 @@
+/*  1.-Posicionamiento 
+    2.- Modelo de caja (Box Model)
+    3.- Tipografia
+    4.- Visuales
+    5.- Otros (Miscellanius)
+*/
+
+:root{
+    --white: #ffffff;
+    --red: rgb(255, 31, 31 , 0.9);
+    --yellow: #fbd743;
+    --purple: rgb(54, 59, 129 , 0.9);
+
+}
+
+body{
+    margin: 0;
+    font-family: 'Urbanist', sans-serif;
+}
+
+* , *::after , *::before {
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+h1,h2,h3,h4{
+    margin: 0;
+}
+
+p{
+    margin: 0;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15vh;
+    background-color: var(--red);
+    overflow: hidden;
+}
+
+.header__title{
+    display: none;
+}
+
+.header__logo {
+    width: 150px;
+
+}
+
+.header__image {
+    width: 150px;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: repeat(20 , 1fr);
+    grid-template-rows: repeat(10 , 1fr);
+    gap: 10px;
+    overflow: hidden;
+    width: 100%;
+    min-width: 1100px;
+    height: 85vh;
+    background-color:var(--white);
+}
+
+.main__attempts {
+    grid-column: 16 / 20;
+    grid-row: 2 / 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--red);
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.attempts__title{
+    margin: 10px;
+    font-size: 2.9rem;
+    font-weight: 700;
+    color: var(--white);
+    
+}
+
+.attempts__paragraph{
+    justify-self: center;
+    font-size: 10rem;
+    color: var(--white);
+}
+
+.main__timer{
+    grid-column: 16/ 20 ;
+    grid-row: 6 / 10;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--red);
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+}
+
+.timer__title{
+    font-size: 2.9rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--white);
+    margin: 10px;
+}
+
+.timer__numbers{
+    justify-self: center;
+    font-size: 6rem;
+    text-align: center;
+    color: var(--white);
+}
+
+.main__game-board{
+    grid-column: 2 / 15;
+    grid-row: 2 / 10;
+    display: grid;
+    gap:10px ;
+    grid-template-columns: repeat(4 , 1fr);
+    grid-template-rows: repeat(3 , 1fr);
+    place-items: center;
+    max-width: 900px;    
+    perspective: 1000px;
+}
+
+.game-board__item{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style:preserve-3d; 
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+    
+}
+
+.game-board__item--flip{
+    transform: rotateY(180deg);
+    transition: all 0.5s ease-out;
+}
+
+.face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    pointer-events: none;
+}
+
+.face--back{
+    background-color: #fbd743;
+    transform: rotateY(180deg);
+}
+
+.face--front{
+    background-color: red;
+}
+
+.face img{
+    width: 80px;
+    pointer-events: none;
+}
+
+.face p{
+    pointer-events: none;
+}
+
+.loading-screen {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    overflow: hidden;
+}
+
+.loading-screen--final{
+    opacity: 0;
+}
+
+.loading-screen__left {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100vh;
+    background-color:white;
+    transition: transform 1s cubic-bezier(0,.45,.98,.64);
+    
+
+}
+
+.loading-screen__left--move{
+    transform: translateX(-100%);
+}
+
+.loading-screen__right {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    background-color:white;
+    transition: transform 1s cubic-bezier(0,.45,.98,.64);
+
+
+}
+
+.loading-screen__right--move {
+    transform: translateX(100%);
+}
+
+.loading-screen__logo {
+
+    position: absolute;
+    top: 10px;
+    left: calc(50% - 400px);
+    width: 800px;
+    animation: scaling 2s ease-in-out infinite ;
+    opacity: 1;
+    transition: all .5s ease-in-out;
+}
+
+@keyframes scaling {
+    0%,100%{
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(.95);
+    }
+    
+}
+ 
+.loading-screen__logo--disappear {
+    opacity: 0;
+}
+
+.loading-screen__spinner{
+    position: absolute;
+    left: calc(50% - 50px);
+    top: calc(60% - 50px);
+    width: 150px;
+    height: 150px;
+    border: 20px solid rgb(54, 59, 129,0.9);
+    border-radius: 50%;
+    border-left-color: rgb(54, 59, 129,0.5);
+    opacity: 1;
+    animation: spin 1s linear infinite;
+    transition: all .5s ease-in-out;
+}
+
+@keyframes spin {
+    
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+
+}
+
+.loading-screen__spinner--off{
+    
+    opacity: 0;
+}
+
+.disabled {
+    pointer-events: none;    
+}
+
+.result-screen{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(24, 20, 20, 0.5);
+    
+    
+}
+
+.result-screen--block{
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.result-screen__article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 250px;
+    border-radius: 10px;
+    background-color: var(--red);
+}
+
+.result-screen__article h2{
+    margin-bottom: 20px;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--white);
+}
+
+.result-screen__article p{
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight:300;
+    color: var(--white);
+
+}
+
+.result-screen__article button{
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 2rem;
+    font-weight: 300;
+    background-color: var(--white);
+    color: var(--red);
+    transition: all .9s ease;
+}
+
+.result-screen__article button i{
+    font-size: 1.5rem;
+    transform: rotate(0) scale(1);
+    transition: all .9s ease;
+
+}
+
+.result-screen__article button:hover{
+
+    background-color: rgba(252, 204, 204, 0.4);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.result-screen__article button:hover i{
+    
+    transform: rotate(180deg) scale(1.1);
+    transition: all .5s ease;
+    
+}
