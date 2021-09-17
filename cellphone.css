@@ -1,0 +1,33 @@
+.header{
+    height: 15vh;
+}
+
+.header__logo{
+    width: 150px;
+}
+
+.header__image{
+    width: 150px;
+}
+
+.main{
+    height: 85vh;
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    grid-template-rows: repeat(10 , 1fr);
+}
+
+.main__attempts{
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.main__timer{
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+}
+
+.main__game-board{
+    grid-column: 1 / 4;
+    grid-row: 3 / 10;
+}

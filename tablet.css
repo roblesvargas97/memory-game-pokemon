@@ -1,0 +1,44 @@
+.header{
+    height: 25vh;
+}
+
+.header__logo{
+    width: 350px;
+}
+
+.header__image{
+    width: 250px;
+}
+
+.main{
+    height: 80vh;
+}
+
+.main__game-board{
+    grid-row: 2 / 9;
+}
+
+.main__attempts {
+    grid-row: 2 / 4;
+}
+
+.attempts__title{
+    font-size: 2rem;
+}
+
+.attempts__paragraph{
+    font-size: 3rem;
+}
+
+.main__timer{
+    grid-row: 7 / 9;
+}
+
+.timer__title{
+    font-size: 2rem;
+}
+
+.timer__numbers{
+    font-size: 3rem;
+}
+

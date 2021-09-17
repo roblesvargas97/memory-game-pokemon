@@ -299,7 +299,7 @@ function checkCards(e) {
                     selectedCard2.classList.remove('game-board__item--flip');
                     boardContainer.classList.remove('disabled');
                     
-                }, 1000);
+                }, 500);
 
             }
             count++;
