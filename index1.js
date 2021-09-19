@@ -95,16 +95,29 @@ class Aplication{
                     const cardFaceF = document.createElement('div');
                     const paragraph = document.createElement('p');
                     const image = document.createElement('img');
+                    const imageF1 = document.createElement('img');
+                    const imageF2 = document.createElement('img');
+                    const imageF3 = document.createElement('img');
                     image.src = infoObtained[index].sprites.other.dream_world.front_default;
                     image.alt = infoObtained[index].name;
+                    imageF1.src = 'https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg';
+                    imageF1.classList.add('face--front__imgf1');
+                    imageF3.src = 'https://i.ibb.co/cCkNDQp/Pokeball-PNG-Photos.png';
+                    imageF3.classList.add('face--front__imgf3');
+                    imageF2.src = 'https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg';
+                    imageF2.classList.add('face--front__imgf2');
                     paragraph.textContent = infoObtained[index].name;
                     element.id = infoObtained[index].id;
                     cardFaceF.classList.add('face' , 'face--front');
                     cardFaceB.classList.add('face' , 'face--back');
                     cardFaceB.appendChild(paragraph);
                     cardFaceB.appendChild(image);
+                    cardFaceF.appendChild(imageF1);
+                    cardFaceF.appendChild(imageF3);
+                    cardFaceF.appendChild(imageF2);
                     element.appendChild(cardFaceF);
                     element.appendChild(cardFaceB);
+
                     
                 });
     

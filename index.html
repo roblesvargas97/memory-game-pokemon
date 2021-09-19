@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="tablet.css" media="(max-width: 1024px)" />
-    <link rel="stylesheet" href="cellphone.css" media="(max-width: 768px)" />
+    <link rel="stylesheet" href="tablet.css" media="(min-width: 768px)" />
+    <link rel="stylesheet" href="laptop.css" media="(min-width: 1024px)" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -28,7 +29,7 @@
             <p class="attempts__paragraph" id="attempts-paragraph"></p>
         </section>
         <section class="main__timer">
-            <h2 class="timer__title">Time:</h2>
+            <h2 class="timer__title">Timer Counter:</h2>
             <p class="timer__numbers" id="timer-numbers">00:00:00</p>
         </section>
         <div class="main__game-board" id="main-game-board">
@@ -45,7 +46,13 @@
             <span class="game-board__item"></span>
             <span class="game-board__item"></span>
         </div>
+
+        <section class="main__message">
+            <h2 class="message__text">&#128147; &#128640; Memory Game Developed by Jesus Uriel Robles Vargas &#128517; &#128400;</h2>
+        </section>
     </main>
+
+    
 
     <div class="loading-screen" id="loading-screen" >
 
